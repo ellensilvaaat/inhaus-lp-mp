@@ -1,0 +1,203 @@
+.location-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.location-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.map-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-wrapper iframe {
+  width: 600px;
+  height: 450px;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.directions-btn {
+  margin-top: 1.5rem;
+  background: var(--primary-orange);
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(246, 124, 11, 0.35);
+  transition: all .25s ease;
+}
+
+.directions-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(246, 124, 11, 0.45);
+}
+
+.location-text {
+  flex: 1;
+}
+
+.location-title {
+  font-family: "Playfair Display";
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.location-underline {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 150px;
+  height: 2px;
+  background: var(--primary-orange);
+}
+
+.location-subtitle {
+  margin: 1.5rem 0 2.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.hours-title {
+  color: var(--primary-orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.hours-list li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.hours-list li span {
+  width: 120px;
+  font-weight: 600;
+}
+
+.address {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.google-map {
+  width: 600px;
+  height: 450px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.zoom-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-right: 10px;
+}
+
+.zoom-btn {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.2s;
+}
+
+.zoom-btn:hover {
+  background: var(--primary-orange);
+  color: white;
+  border-color: var(--primary-orange);
+}
+
+
+/* ====================================================== */
+/* 📱 MOBILE (ATÉ 768px) —  ajustes exclusivos             */
+/* ====================================================== */
+
+@media (max-width: 768px) {
+
+  /* Inverte a ordem no mobile → TEXTO primeiro, MAPA depois */
+  .location-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+    padding: 0 1.2rem;
+    text-align: center; /* TEXTO CENTRALIZADO */
+  }
+
+  .location-text {
+    width: 100%;
+    text-align: center; /* AGORA FICA CENTRALIZADO */
+  }
+
+  .location-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .location-underline {
+    left: 50%;
+    transform: translateX(-50%); /* centraliza underline */
+  }
+
+  .location-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hours-list {
+    text-align: center;
+  }
+
+  .hours-list li {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .address {
+    text-align: center;
+  }
+
+  /* MAPA — agora 100% largura */
+  .map-wrapper iframe,
+  .google-map {
+    width: 350px !important;
+    height: 330px !important;
+  }
+
+  .directions-btn {
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+  }
+
+  .map-wrapper{
+   margin: auto;
+  }
+}

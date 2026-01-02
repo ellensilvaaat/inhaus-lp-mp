@@ -1,0 +1,76 @@
+.timeslots-container {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.timeslots-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* DESKTOP Mantido */
+  gap: 0.8rem;
+}
+
+.slot {
+  padding: 0.7rem;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.slot.active {
+  background: #F67C0B;
+  border-color: #F67C0B;
+  color: white;
+}
+
+
+/* ====================================================== */
+/* 📱 até 320px — 1 COLUNA                               */
+/* ====================================================== */
+@media (max-width: 320px) {
+
+  .timeslots-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.7rem;
+  }
+
+  .slot {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ====================================================== */
+/* 📱 321px até 767px — 2 COLUNAS                        */
+/* ====================================================== */
+@media (min-width: 321px) and (max-width: 767px) {
+
+  .timeslots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+
+  .slot {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+
+/* ====================================================== */
+/* 📱 768px até 900px — 3 COLUNAS                         */
+/* ====================================================== */
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .timeslots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .slot {
+    padding: 0.9rem;
+  }
+}

@@ -1,0 +1,199 @@
+.our-process {
+  background-color: white;
+  padding: 20px 20px;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.our-process h2 {
+  text-align: center;
+  font-family: 'the seaons', serif;
+  font-size: 2rem; /* MANTIDO */
+  font-weight: 100;
+}
+
+.underline {
+  width: 80px;
+  height: 1px;
+  background-color: #F67C0B;
+  margin: 0 auto 70px auto;
+  border-radius: 2px;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.process-step.flip {
+  flex-direction: row-reverse;
+}
+
+.process-step.flip .text {
+  text-align: right;
+  max-width: 490px;
+}
+
+.process-step .image img {
+  width: 100%;
+  max-width: 480px;
+  filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.2));
+}
+
+.process-step .text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.step-number {
+  font-size: 1.8rem; /* MANTIDO */
+  color: #ccc;
+  font-weight: 700;
+}
+
+.process-step h3 {
+  font-size: 1.3rem; /* MANTIDO */
+  margin: 10px 0 25px 0;
+  font-weight: 300;
+  font-family: var(--font-primary);
+  line-height: 1;
+}
+
+.process-step h3 strong {
+  font-weight: bold;
+}
+
+.process-step p {
+  font-size: 1.1rem; /* MANTIDO */
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* ==================================================== */
+/* 📱 até 320px — AJUSTES EXCLUSIVOS PARA CELULAR       */
+/* ==================================================== */
+@media (max-width: 320px) {
+
+  .underline {
+    margin-bottom: 40px; /* MENOR */
+  }
+
+  .process-step {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 15px;           /* MENOR */
+    margin-bottom: 40px; /* MENOR */
+  }
+
+  .process-step .image img {
+    max-width: 95%; /* LEVE REDUÇÃO */
+    height: auto;
+  }
+
+  .process-step .text {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .step-number {
+    font-size: 1.5rem; /* MENOR APENAS NO MOBILE */
+  }
+
+  .process-step h3 {
+    font-size: 1.15rem; /* MENOR */
+    margin-bottom: 15px;
+  }
+
+  .process-step p {
+    font-size: 0.9rem; /* MENOR */
+    line-height: 1.45;
+  }
+
+  .process-step.flip .text {
+    text-align: center; /* centraliza no mobile */
+  }
+}
+
+
+/* ==================================================== */
+/* 📱 321px até 767px — AJUSTES EXCLUSIVOS MOBILE/TABLET */
+/* ==================================================== */
+@media (min-width: 321px) and (max-width: 767px) {
+
+  .underline {
+    margin-bottom: 45px;
+  }
+
+  .process-step {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin-bottom: 45px;
+  }
+
+  .process-step .image img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .process-step .text {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .step-number {
+    font-size: 1.6rem; /* MENOR QUE DESKTOP, SÓ MOBILE */
+  }
+
+  .process-step h3 {
+    font-size: 1.2rem; /* MENOR */
+    margin-bottom: 18px;
+  }
+
+  .process-step p {
+    font-size: 1rem;
+  }
+
+  .process-step.flip .text {
+    text-align: center;
+  }
+}
+
+
+/* ==================================================== */
+/* 📱 768px até 900px — ajustes apenas de spacing       */
+/* ==================================================== */
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .process-step {
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  .process-step .image img {
+    max-width: 90%;
+  }
+
+  .process-step .text {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+
+  .step-number {
+    font-size: 1.7rem;
+  }
+
+  .process-step h3 {
+    font-size: 1.25rem;
+  }
+}

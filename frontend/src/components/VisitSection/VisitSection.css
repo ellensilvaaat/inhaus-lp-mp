@@ -1,0 +1,222 @@
+.visit-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #ffff 50%, #F1F1F1 100%);
+  overflow: hidden;
+}
+
+.bg-left,
+.bg-right {
+  position: absolute;
+  z-index: 1;
+}
+
+.bg-left {
+  left: 0;
+  bottom: 0;
+}
+
+.bg-right {
+  right: 0;
+  top: 0;
+}
+
+.visit-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.visit-title {
+  font-family: "Playfair Display";
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.visit-subtitle {
+  margin: 0 auto 3rem;
+  max-width: 600px;
+  color: black;
+  font-size: 1rem;
+  padding-top: 0.8rem;
+}
+
+.visit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 500px;
+  justify-content: center;
+  margin: auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.field {
+  flex: 1;
+  text-align: left;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #F67C0B;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+.submit-btn {
+  margin: 2rem auto 0;
+  padding: 0.9rem 2.2rem;
+  background: #F67C0B;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: var(--font-title);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(246, 124, 11, 0.35);
+  transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+  background: #ff8f26;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(246, 124, 11, 0.45);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(246, 124, 11, 0.25);
+}
+
+.invalid {
+  border-color: red !important;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+
+/* ====================================================== */
+/* 📱 ATÉ 320px — RESPONSIVIDADE EXCLUSIVA PARA CELULAR   */
+/* ====================================================== */
+
+@media (max-width: 320px) {
+
+  .visit-section {
+    padding: 3rem 0; /* menos espaço */
+  }
+
+  .bg-left, .bg-right {
+    display: none; /* muito grande pra telas pequenas */
+  }
+
+  .visit-title {
+    font-size: 1.5rem;
+  }
+
+  .visit-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+  }
+
+  .visit-form {
+    gap: 1.5rem;
+    width: 90%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.6rem;
+  }
+}
+
+
+/* ====================================================== */
+/* 📱 321px ATÉ 767px — MOBILE / TABLET PEQUENO           */
+/* ====================================================== */
+
+@media (min-width: 321px) and (max-width: 767px) {
+
+  .visit-section {
+    padding: 4rem 0;
+  }
+
+  .bg-left, .bg-right {
+    display: none;
+  }
+
+  .visit-title {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .visit-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+    padding: 0 16px;
+  }
+
+  .visit-form {
+    width: 90%;
+    gap: 1.8rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+
+  .submit-btn {
+    font-size: 1.05rem;
+    padding: 0.85rem 1.9rem;
+  }
+}
+
+
+/* ====================================================== */
+/* 📱 768px ATÉ 900px — TABLET MÉDIO                      */
+/* ====================================================== */
+
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .visit-section {
+    padding: 5rem 0;
+  }
+
+  .visit-title {
+    font-size: 1.8rem;
+  }
+
+  .visit-subtitle {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+
+  .visit-form {
+    width: 85%;
+    gap: 2rem;
+  }
+
+  .form-row {
+    gap: 1.5rem;
+  }
+}

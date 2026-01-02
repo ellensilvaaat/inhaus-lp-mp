@@ -1,0 +1,204 @@
+/* WRAPPER GERAL */
+.week-calendar-wrapper {
+  width: 100%;
+}
+
+/* CABEÇALHO */
+.week-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.arrow-btn {
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.arrow-btn:hover {
+  background: #ececec;
+}
+
+.arrow-btn.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.week-label {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+}
+
+/* GRID DOS DIAS — DESKTOP ORIGINAL */
+.week-calendar {
+  display: flex;
+  gap: 1rem;
+  max-width: 700px !important;
+  justify-content: center;
+}
+
+/* CARD DO DIA */
+.day-box {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 10px;
+  background: white;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.day-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.day-number {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* HOVER */
+.day-box:hover {
+  border-color: #F67C0B;
+  transform: translateY(-2px);
+}
+
+/* DESABILITADO */
+.day-box.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  transform: none;
+}
+
+/* ATIVO */
+.day-box.active {
+  background: #F67C0B;
+  border-color: #F67C0B;
+  color: white;
+}
+
+
+/* ========================================================== */
+/* 📱 ATÉ 320px — MOBILE PEQUENO                             */
+/* ========================================================== */
+
+@media (max-width: 320px) {
+
+  .week-header {
+    margin-bottom: 1rem;
+    gap: 0.8rem;
+  }
+
+  .week-label {
+    font-size: 1rem;
+  }
+
+  .week-calendar {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.7rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .week-calendar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .day-box {
+    min-width: 70px;
+    padding: 0.65rem 0.5rem;
+    border-radius: 8px;
+  }
+
+  .day-name {
+    font-size: 0.85rem;
+  }
+
+  .day-number {
+    font-size: 1rem;
+  }
+}
+
+
+/* ========================================================== */
+/* 📱 321px — 767px — MOBILE / TABLET PEQUENO                */
+/* ========================================================== */
+
+@media (min-width: 321px) and (max-width: 767px) {
+
+  .week-header {
+    margin-bottom: 1.2rem;
+  }
+
+  .week-label {
+    font-size: 1.1rem;
+  }
+
+  .week-calendar {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.9rem;
+    padding-bottom: 0.6rem;
+    scrollbar-width: none;
+  }
+
+  .week-calendar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .day-box {
+    min-width: 85px;
+    padding: 0.75rem 0.6rem;
+    border-radius: 10px;
+  }
+
+  .day-name {
+    font-size: 0.9rem;
+  }
+
+  .day-number {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ========================================================== */
+/* 📱 768px — 900px — TABLET MÉDIO                           */
+/* ========================================================== */
+
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .week-calendar {
+    gap: 0.8rem;
+  }
+
+  .day-box {
+    padding: 0.85rem 0.7rem;
+  }
+
+  .day-name {
+    font-size: 0.9rem;
+  }
+
+  .day-number {
+    font-size: 1.15rem;
+  }
+}
+

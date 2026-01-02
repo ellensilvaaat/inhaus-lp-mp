@@ -1,0 +1,191 @@
+.team-carousel {
+  padding: 4rem 0;
+  background: white;
+}
+
+.team-carousel__title {
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.team_underline {
+  width: 150px;
+  height: 1px;
+  background-color: #F67C0B;
+  border-radius: 2px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.team-carousel__container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.team-card {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 500px;
+  padding-top: 0.9rem;
+  position: relative;
+}
+
+/* imagem */
+.team-card__image {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* overlay leve */
+.team-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  transition: background 0.35s ease;
+  z-index: 1;
+}
+
+/* overlay no hover */
+.team-card:hover .team-card__image::after {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* título na imagem */
+.team-card__name {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1rem;
+  z-index: 3;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* some no desktop */
+.team-card:hover .team-card__name {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* descrição no hover (desktop) */
+.team-card__overlay {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.5rem;
+  width: 80%;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.35s ease;
+}
+
+.team-card__description {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.team-card:hover .team-card__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================= */
+/* 📱 TEXTO NO MOBILE                        */
+/* ========================================= */
+
+.team-card__mobile-text {
+  display: none;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.45;
+  text-align: center;
+}
+
+
+
+/* ================================================= */
+/* 📱 até 768px — FLEX COLUNA + CARDS MENORES       */
+/* ================================================= */
+@media (max-width: 768px) {
+
+  /* layout vertical */
+  .team-carousel__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  /* cards menores e proporcionais */
+  .team-card {
+    width: 80%;
+    max-width: 350px;
+    height: auto;
+    padding-top: 0;
+  }
+
+  /* imagem proporcional */
+  .team-card__image {
+    height: auto;
+    padding-top: 130%; /* proporção tipo 4:5 */
+  }
+
+  .team-card__image::after {
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  /* mostrar descrição abaixo */
+  .team-card__mobile-text {
+    display: block;
+  }
+
+  /* remover overlay e hover no mobile */
+  .team-card__overlay {
+    display: none !important;
+  }
+
+  .team-card__name {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+
+/* ========================================= */
+/* 📱 até 500px — ainda menores              */
+/* ========================================= */
+@media (max-width: 500px) {
+  .team-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .team-card__image {
+    padding-top: 140%; /* levemente mais alto */
+  }
+
+  .team-card__mobile-text {
+    font-size: 0.95rem;
+  }
+}
+

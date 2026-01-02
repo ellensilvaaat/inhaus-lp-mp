@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Taren Point</title>
+
+    <!-- 🔥 MARCADOR para saber quando o Maps carregar -->
+    <script>
+      window.MAPS_JS_LOADED = false;
+      window.MAPS_ONLOAD = () => {
+        console.log("🔥 Google Maps JS carregou");
+        window.MAPS_JS_LOADED = true;
+      };
+    </script>
+
+    <!-- 🔥 SCRIPT REAL DO GOOGLE MAPS (NOVO) -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=%VITE_GOOGLE_MAPS_KEY%&libraries=maps,marker&callback=MAPS_ONLOAD"
+      async
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- React -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+

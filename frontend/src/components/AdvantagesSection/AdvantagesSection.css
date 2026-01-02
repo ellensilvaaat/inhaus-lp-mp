@@ -1,0 +1,144 @@
+.advantages-section {
+  padding: 5rem 0;
+  width: 100%;
+  background: white;
+  text-align: center;
+}
+
+/* Title */
+.advantages-title {
+  font-family: "Playfair Display";
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.advantages-underline {
+  position: absolute;
+  bottom: -10px;
+  left: 82%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 1px;
+  background: #f67c0b;
+  border-radius: 20px;
+}
+
+.advantages-subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 200;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto 4rem auto;
+}
+
+/* GRID — DESKTOP */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.adv-card {
+  background: #F1F1F1;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.adv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon */
+.adv-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.adv-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+/* Text */
+.adv-text {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+/* ====================================================== */
+/* 📱 MOBILE — DUAS COLUNAS (ATÉ 768px) */
+/* ====================================================== */
+@media (max-width: 768px) {
+    .advantages-section {
+        padding-top: 0;
+    }
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .adv-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .adv-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .adv-title {
+    font-size: 0.95rem;
+  }
+
+  .adv-text {
+    font-size: 0.75rem;
+  }
+
+  .advantages-title {
+    font-size: 1.7rem;
+  }
+
+  .advantages-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+  }
+}
+
+
+/* ====================================================== */
+/* 📱 EXTRA SMALL — ATÉ 380px (iPhone SE, minis, etc) */
+/* ====================================================== */
+@media (max-width: 380px) {
+  .advantages-grid {
+    gap: 1rem;
+  }
+
+  .adv-card {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .adv-title {
+    font-size: 0.9rem;
+  }
+
+  .adv-text {
+    font-size: 0.72rem;
+  }
+}

@@ -1,0 +1,13 @@
+/* src/styles/variables.css */
+:root {
+  --primary-orange: #F67C0B;
+  --white: #ffffff;
+  --black: #000000;
+
+  font-family: 'Playfair Display', serif;
+  --font-body: 'Be Vietnam', sans-serif;
+
+  --radius-md: 0.5rem;
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.3);
+}

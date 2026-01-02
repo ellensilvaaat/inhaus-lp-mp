@@ -101,7 +101,7 @@ export default function VisitSection() {
   }
 
   return (
-    <section className="visit-section">
+    <section id="form" className="visit-section">
       <img
         src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/Group%2011%20(1).svg"
         className="bg-left"

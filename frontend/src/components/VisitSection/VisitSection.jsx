@@ -102,62 +102,83 @@ export default function VisitSection() {
 
   return (
     <section className="visit-section">
+      <img
+        src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/Group%2011%20(1).svg"
+        className="bg-left"
+        alt=""
+      />
+      <img
+        src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/Group%2012%20(7).png"
+        className="bg-right"
+        alt=""
+      />
+
       <div className="visit-container">
         <h2 className="visit-title">Prepare for your visit</h2>
 
+        <p className="visit-subtitle">
+          Leave your details and let us know what you’re interested in, 
+          so we can make your visit more relevant and helpful.
+        </p>
+
         <form className="visit-form" onSubmit={handleSubmit}>
-          {/* FULL NAME */}
-          <div className="field">
-            <label>Full Name *</label>
-            <input
-              type="text"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
-            />
+          {/* FULL NAME + MOBILE */}
+          <div className="form-row">
+            <div className="field">
+              <label>Full Name <span>*</span></label>
+              <input
+                type="text"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="field">
+              <label>Mobile</label>
+              <input
+                type="text"
+                value={mobile}
+                onChange={(e) => {
+                  setMobile(e.target.value);
+                  validateMobile(e.target.value);
+                }}
+                className={mobileError ? "invalid" : ""}
+              />
+              {mobileError && <p className="error-msg">{mobileError}</p>}
+            </div>
           </div>
 
           {/* EMAIL */}
-          <div className="field">
-            <label>Email *</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                validateEmail(e.target.value);
-              }}
-              className={emailError ? "invalid" : ""}
-              required
-            />
-            {emailError && <p className="error-msg">{emailError}</p>}
-          </div>
-
-          {/* MOBILE */}
-          <div className="field">
-            <label>Mobile</label>
-            <input
-              type="text"
-              value={mobile}
-              onChange={(e) => {
-                setMobile(e.target.value);
-                validateMobile(e.target.value);
-              }}
-              className={mobileError ? "invalid" : ""}
-            />
-            {mobileError && <p className="error-msg">{mobileError}</p>}
+          <div className="form-row">
+            <div className="field">
+              <label>Email <span>*</span></label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  validateEmail(e.target.value);
+                }}
+                className={emailError ? "invalid" : ""}
+                required
+              />
+              {emailError && <p className="error-msg">{emailError}</p>}
+            </div>
           </div>
 
           {/* SERVICE */}
-          <div className="field">
-            <label>Interested Service *</label>
-            <select value={service} onChange={handleServiceChange} required>
-              <option value="">Select</option>
-              <option value="Kitchen">Kitchen</option>
-              <option value="Bathroom">Bathroom</option>
-              <option value="Full Home">Full Home</option>
-              <option value="Flooring">Flooring</option>
-            </select>
+          <div className="form-row">
+            <div className="field">
+              <label>Interested Service <span>*</span></label>
+              <select value={service} onChange={handleServiceChange} required>
+                <option value="">Select...</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Bathroom">Bathroom</option>
+                <option value="Full Home">Full Home</option>
+                <option value="Flooring">Flooring</option>
+              </select>
+            </div>
           </div>
 
           {/* CALENDAR + TIME SLOTS */}
@@ -178,15 +199,9 @@ export default function VisitSection() {
             </>
           )}
 
-          <button className="submit-btn" type="submit">
-            Submit
-          </button>
+          <button className="submit-btn" type="submit">Submit</button>
         </form>
       </div>
     </section>
   );
 }
-
-
-
-

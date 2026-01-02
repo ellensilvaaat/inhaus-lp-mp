@@ -22,6 +22,9 @@ export default function VisitSection() {
   const AU_PHONE_REGEX = /^(?:\+?61|0)[2-478](?:[ -]?[0-9]){8}$/;
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // =============================
+  // VALIDATIONS
+  // =============================
   function validateEmail(value) {
     setEmailError(EMAIL_REGEX.test(value) ? "" : "Please enter a valid email");
   }
@@ -35,6 +38,9 @@ export default function VisitSection() {
     );
   }
 
+  // =============================
+  // FETCH BOOKED TIMES
+  // =============================
   async function fetchBookedTimes(dateString) {
     try {
       const res = await fetch(
@@ -58,6 +64,9 @@ export default function VisitSection() {
     setShowCalendar(true);
   }
 
+  // =============================
+  // FORM SUBMIT
+  // =============================
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -97,24 +106,70 @@ export default function VisitSection() {
         <h2 className="visit-title">Prepare for your visit</h2>
 
         <form className="visit-form" onSubmit={handleSubmit}>
-          <input value={fullName} onChange={e => setFullName(e.target.value)} />
-          <input value={email} onChange={e => {
-            setEmail(e.target.value);
-            validateEmail(e.target.value);
-          }} />
-          <select value={service} onChange={handleServiceChange}>
-            <option value="">Select</option>
-            <option value="Kitchen">Kitchen</option>
-            <option value="Bathroom">Bathroom</option>
-            <option value="Full Home">Full Home</option>
-            <option value="Flooring">Flooring</option>
-          </select>
+          {/* FULL NAME */}
+          <div className="field">
+            <label>Full Name *</label>
+            <input
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+            />
+          </div>
 
+          {/* EMAIL */}
+          <div className="field">
+            <label>Email *</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                validateEmail(e.target.value);
+              }}
+              className={emailError ? "invalid" : ""}
+              required
+            />
+            {emailError && <p className="error-msg">{emailError}</p>}
+          </div>
+
+          {/* MOBILE */}
+          <div className="field">
+            <label>Mobile</label>
+            <input
+              type="text"
+              value={mobile}
+              onChange={(e) => {
+                setMobile(e.target.value);
+                validateMobile(e.target.value);
+              }}
+              className={mobileError ? "invalid" : ""}
+            />
+            {mobileError && <p className="error-msg">{mobileError}</p>}
+          </div>
+
+          {/* SERVICE */}
+          <div className="field">
+            <label>Interested Service *</label>
+            <select value={service} onChange={handleServiceChange} required>
+              <option value="">Select</option>
+              <option value="Kitchen">Kitchen</option>
+              <option value="Bathroom">Bathroom</option>
+              <option value="Full Home">Full Home</option>
+              <option value="Flooring">Flooring</option>
+            </select>
+          </div>
+
+          {/* CALENDAR + TIME SLOTS */}
           {showCalendar && (
             <>
-              <WeeklyCalendar selectedDate={selectedDate} onSelect={setSelectedDate} />
+              <WeeklyCalendar
+                selectedDate={selectedDate}
+                onSelect={setSelectedDate}
+              />
               {selectedDate && (
                 <TimeSlots
+                  date={selectedDate}
                   selectedTime={selectedTime}
                   bookedTimes={bookedTimes}
                   onSelect={setSelectedTime}
@@ -123,12 +178,15 @@ export default function VisitSection() {
             </>
           )}
 
-          <button type="submit">Submit</button>
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </section>
   );
 }
+
 
 
 

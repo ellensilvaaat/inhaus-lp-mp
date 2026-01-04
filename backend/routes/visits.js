@@ -19,7 +19,7 @@ router.get("/booked", async (req, res) => {
 router.post("/", async (req, res) => {
   const { full_name, mobile, email, service, visit_day, visit_time } = req.body;
 
-  const { error } = await supabase.from("visits").insert([{
+  const { error } = await supabase.from("visits_mp").insert([{
     full_name,
     mobile,
     email,

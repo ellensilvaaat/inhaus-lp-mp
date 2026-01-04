@@ -1,10 +1,59 @@
-# Node modules
-**/node_modules/
+# ===========================
+# GENERIC NODE / VITE PROJECT
+# ===========================
 
-# Local envs
-**/.env
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Vercel / Build
-.vercel/
+# ===========================
+# ENVIRONMENT VARIABLES
+# ===========================
+.env
+.env.production
+.env.development
+.env.local
+.env.*.local
+
+# ===========================
+# DIST / BUILD FOLDERS
+# ===========================
 dist/
 build/
+out/
+vite-dist/
+
+# ===========================
+# MAC OS FILES
+# ===========================
+.DS_Store
+
+# ===========================
+# LOG FILES
+# ===========================
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ===========================
+# VSCODE
+# ===========================
+.vscode/
+*.code-workspace
+
+# ===========================
+# FRONTEND
+# ===========================
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# ===========================
+# BACKEND
+# ===========================
+backend/node_modules/
+backend/.env
+backend/dist/

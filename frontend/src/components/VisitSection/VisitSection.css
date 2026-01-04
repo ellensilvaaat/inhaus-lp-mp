@@ -1,3 +1,7 @@
+/* ====================================================== */
+/*  VISIT SECTION — LAYOUT GERAL                          */
+/* ====================================================== */
+
 .visit-section {
   position: relative;
   padding: 6rem 0;
@@ -62,6 +66,10 @@
   text-align: left;
 }
 
+/* ====================================================== */
+/*  INPUTS + SELECT                                       */
+/* ====================================================== */
+
 .field input,
 .field select {
   width: 100%;
@@ -69,7 +77,35 @@
   border: 2px solid #F67C0B;
   border-radius: 10px;
   margin-top: 0.5rem;
+  font-size: 1rem;
 }
+
+/* ====================================================== */
+/* ⭐ FIX SAFARI — SELECT BUG                              */
+/* ====================================================== */
+
+.field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  height: 52px;             /* Safari fix */
+  line-height: 52px;        /* Safari fix */
+  padding: 0 1rem;          /* Safari fix */
+  background-color: white;  
+}
+
+/* seta laranja custom */
+.field select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23F67C0B' height='12' width='12' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 12,0 6,8'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+/* ====================================================== */
+/* SUBMIT BUTTON                                          */
+/* ====================================================== */
 
 .submit-btn {
   margin: 2rem auto 0;
@@ -98,6 +134,10 @@
   box-shadow: 0 4px 14px rgba(246, 124, 11, 0.25);
 }
 
+/* ====================================================== */
+/* ERRORS                                                 */
+/* ====================================================== */
+
 .invalid {
   border-color: red !important;
 }
@@ -108,19 +148,18 @@
   margin-top: 0.3rem;
 }
 
-
 /* ====================================================== */
-/* 📱 ATÉ 320px — RESPONSIVIDADE EXCLUSIVA PARA CELULAR   */
+/* 📱 ATÉ 320px — MOBILE MUITO PEQUENO                     */
 /* ====================================================== */
 
 @media (max-width: 320px) {
 
   .visit-section {
-    padding: 3rem 0; /* menos espaço */
+    padding: 3rem 0;
   }
 
   .bg-left, .bg-right {
-    display: none; /* muito grande pra telas pequenas */
+    display: none;
   }
 
   .visit-title {
@@ -149,9 +188,8 @@
   }
 }
 
-
 /* ====================================================== */
-/* 📱 321px ATÉ 767px — MOBILE / TABLET PEQUENO           */
+/* 📱 321px–767px — CELULAR NORMAL                         */
 /* ====================================================== */
 
 @media (min-width: 321px) and (max-width: 767px) {
@@ -191,9 +229,8 @@
   }
 }
 
-
 /* ====================================================== */
-/* 📱 768px ATÉ 900px — TABLET MÉDIO                      */
+/* 📱 768px–900px — TABLET MÉDIO                           */
 /* ====================================================== */
 
 @media (min-width: 768px) and (max-width: 900px) {
@@ -220,3 +257,4 @@
     gap: 1.5rem;
   }
 }
+

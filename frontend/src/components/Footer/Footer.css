@@ -1,5 +1,5 @@
 .footer {
-  background: #111; /* preto elegante */
+  background: #111;
   color: #fff;
   padding: 2rem 2rem 2rem;
   width: 100%;
@@ -64,11 +64,13 @@
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
+/* ========================================== */
+/* 📱 TABLET                                  */
+/* ========================================== */
 @media (max-width: 900px) {
-  .footer{
+  .footer {
     margin-top: 0;
-}
+  }
 
   .footer-container {
     grid-template-columns: 1fr 1fr;
@@ -76,14 +78,39 @@
   }
 }
 
+/* ========================================== */
+/* 📱 MOBILE — layout exatamente como pediu    */
+/* ========================================== */
 @media (max-width: 600px) {
+
   .footer-container {
-    grid-template-columns: 1fr;
+    display: grid;
+
+    /* 2 colunas (Location + Contact) */
+    grid-template-columns: 1fr 1fr;
+
     gap: 2rem;
+    text-align: left;
+  }
+
+  /* A LOGO fica em cima, ocupando toda a largura */
+  .footer-logo {
+    grid-column: span 2;
+    text-align: left;
   }
 
   .footer-logo img {
     width: 150px;
+  }
+
+  /* FOLLOW US desce e ocupa 2 colunas (fica centralizado abaixo das outras duas) */
+  .footer-social,
+  .footer-column:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  .footer-column:nth-child(4) {
+    margin-top: 0.5rem;
   }
 
   .footer-bottom {

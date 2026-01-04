@@ -4,7 +4,7 @@ export default function LocationMap() {
   const mapRef = useRef(null);
 
   useEffect(() => {
-    const address = "Unit 2/175 Taren Point Rd, Caringbah NSW 2229";
+    const address = "Shop 10/2A Todman Ave, Kensington NSW 2033";
 
     const interval = setInterval(async () => {
       if (!window.MAPS_JS_LOADED) {

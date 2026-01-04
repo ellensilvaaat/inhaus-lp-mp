@@ -6,7 +6,7 @@ const DreamApartment = () => {
     <section className="dream-apartment">
       <div className="dream-wrapper">
         <div className="image-container">
-          <img src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/intro.png" alt="Bringing your dream apartment to life" />
+          <img src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/intro%20(1).png" alt="Bringing your dream apartment to life" />
         </div>
         <div className="text-container">
           <p>

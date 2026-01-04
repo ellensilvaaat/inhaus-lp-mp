@@ -9,7 +9,7 @@ export default function Footer() {
 
         {/* LOGO */}
         <div className="footer-logo">
-          <img src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/Logo%20(1).svg" alt="Inhaus Living" />
+          <img src="https://ik.imagekit.io/ijsd2xvnc/Inhaus/Frame%2012.svg" alt="Inhaus Living" />
         </div>
 
         {/* LOCATIONS */}
@@ -23,7 +23,7 @@ export default function Footer() {
         {/* CONTACT */}
         <div className="footer-column">
           <h4 className="footer-title">Contact us</h4>
-          <p>(02) 8359 1679</p>
+          <p>(02) 9662 3509</p>
           <p>info@inhausliving.com.au</p>
         </div>
 

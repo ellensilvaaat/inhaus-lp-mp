@@ -7,7 +7,7 @@ router.get("/booked", async (req, res) => {
   const { date } = req.query;
 
   const { data, error } = await supabase
-    .from("visits")
+    .from("visits_mp")
     .select("visit_time")
     .eq("visit_day", date);
 

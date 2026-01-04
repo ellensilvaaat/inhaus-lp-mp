@@ -4,24 +4,18 @@ import './TeamCarousel.css';
 const team = [
   {
     id: 1,
-    name: 'Kitchens & appliances',
-    image: 'https://ik.imagekit.io/ijsd2xvnc/Inhaus/kam-idris-Ot2iTXgC6fY-unsplash.jpg',
-    description: 'Kitchen displays with integrated appliances, layouts and joinery solutions.',
-  },
-  {
-    id: 2,
     name: 'Bathrooms & fixtures',
     image: 'https://ik.imagekit.io/ijsd2xvnc/Inhaus/steven-ungermann-Aac7IlKnYX8-unsplash.jpg',
     description: 'Bathroom environments showcasing tapware, vanities, tiles and finishes.',
   },
   {
-    id: 3,
+    id: 2,
     name: 'Materials, colours & finishes',
     image: 'https://ik.imagekit.io/ijsd2xvnc/Inhaus/mohammad-lotfian-D6mlvnGbAVg-unsplash.jpg',
     description: 'Explore a wide range of colours, finishes, stones and surface options you can see and touch.',
   },
   {
-    id: 4,
+    id:3,
     name: 'Tiles, flooring & surfaces',
     image: 'https://ik.imagekit.io/ijsd2xvnc/Inhaus/maria-kovalets-SMHlc6u80-A-unsplash.jpg',
     description: 'Flooring, tiles and stone options to help you compare materials and make confident choices.',

@@ -1,0 +1,10 @@
+# Node modules
+**/node_modules/
+
+# Local envs
+**/.env
+
+# Vercel / Build
+.vercel/
+dist/
+build/

@@ -44,7 +44,7 @@ export default function VisitSection() {
   async function fetchBookedTimes(dateString) {
     try {
       const res = await fetch(
-        `${API_URL}/api/visits_mp/booked?date=${dateString}`
+        `${API_URL}/api/visits/booked?date=${dateString}`
       );
       const json = await res.json();
       setBookedTimes(json.bookedTimes || []);
@@ -78,7 +78,7 @@ export default function VisitSection() {
     const visit_day = selectedDate.toISOString().split("T")[0];
 
     try {
-      const res = await fetch(`${API_URL}/api/visits_mp`, {
+      const res = await fetch(`${API_URL}/api/visits`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
